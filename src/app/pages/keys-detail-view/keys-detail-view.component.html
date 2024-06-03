@@ -1,0 +1,37 @@
+<div class="wrapper">
+
+    <h1 class="numberOfEvent">About Number {{keyDetail.id}} Participants </h1>
+            <div class="items">
+               <div class="itemWrapper">
+                    <h2 class="Title">Key Name</h2>
+                    <p class="name">{{keyDetail.keyName}}</p>
+               </div>
+               <div class="itemWrapper">
+                    <h2 class="Title">Instructure</h2>
+                    <p class="name">{{keyDetail.keyInstruction}}</p>
+                </div>
+                <div class="itemWrapper">
+                    <h2 class="Title">Creator</h2>
+                    <p class="name">{{keyDetail.manufacturer}}</p>
+                </div>
+                <div class="itemWrapper">
+                    <h2 class="Title">Price</h2>
+                    <p class="name">{{keyDetail.price}}</p>
+                </div>
+            </div>
+
+            <div class="items">
+               <div class="itemWrapper">
+                    <h2 class="Title">Category Name</h2>
+                    <p class="name">{{keyDetail.keyCategory.keyCategoryName}}</p>
+               </div>
+               <div class="itemWrapper">
+                    <h2 class="Title">Description</h2>
+                    <p class="name">{{keyDetail.keyCategory.keyDescription}}</p>
+                </div>
+                <div class="itemWrapper">
+                    <h2 class="Title">Security Level</h2>
+                    <p class="name">{{keyDetail.keyCategory.securityLevel}}</p>
+                </div>
+            </div>
+</div>

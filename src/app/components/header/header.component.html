@@ -1,0 +1,34 @@
+<header>
+
+  <div class="logo">
+    <a href="" class="items">
+      <p>KeyStore</p>
+    </a>
+  </div>
+
+  <div class="buttons">
+
+    <div class="button">
+     <button mat-button [matMenuTriggerFor]="menu">Menu</button>
+     <mat-menu #menu="matMenu">
+       <button mat-menu-item (click)="btnClick('keys')">Keys</button>
+       <button mat-menu-item (click)="btnClick('key-categories')">Key categories</button>
+     </mat-menu>
+    </div>
+
+
+    <a
+      [style.display]="
+        router.url !== '/keys' && router.url !== '/key-categories'
+          ? 'none'
+          : 'block'
+      "
+      class="btn"
+      [href]="
+        router.url === '/keys' ? '/create-keys' : '/create-key-categories'
+      "
+      >Create</a
+    >
+  </div>
+
+</header>

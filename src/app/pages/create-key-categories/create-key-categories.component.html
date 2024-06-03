@@ -1,0 +1,48 @@
+<div class="wrapper">
+  <!-- create-participants -->
+  <form
+    [formGroup]="keyCategoriesForm"
+    (ngSubmit)="onSubmit()"
+    class="add-form"
+  >
+    <h1 class="title">Create Participants</h1>
+    <div class="form-control">
+      <label for="text">Category Name</label>
+      <input
+        type="text"
+        name="text"
+        id="text"
+        placeholder="Add category name"
+        formControlName="keyCategoryName"
+      />
+    </div>
+    <div class="form-control">
+      <label for="day">Description</label>
+      <textarea
+        name="text"
+        id="text"
+        placeholder="Add description"
+        formControlName="keyDescription"
+        style="width: 100%; height: 200px"
+      ></textarea>
+    </div>
+    <div class="form-control form-control-check">
+      <label for="level">Select Events</label>
+      <select name="level" id="level" formControlName="securityLevel" class="selector">
+        <option value="default" selected>Select Events</option>
+        <option value="high">High</option>
+        <option value="medium">Medium</option>
+        <option value="low">Low</option>
+      </select>
+    </div>
+
+    <button
+      type="submit"
+      [disabled]="keyCategoriesForm.invalid || keyCategoriesForm.pristine"
+      [class.disabled]="keyCategoriesForm.invalid || keyCategoriesForm.pristine"
+      class="btn btn-block"
+    >
+      {{ id ? "Update" : "Submit" }}
+    </button>
+  </form>
+</div>

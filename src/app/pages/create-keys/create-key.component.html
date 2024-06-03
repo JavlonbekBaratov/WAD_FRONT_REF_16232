@@ -1,0 +1,33 @@
+<div class="wrapper">
+  <form  [formGroup]="keyForm" (ngSubmit)="onSubmit()" class="add-form">
+    <h1 class="title">Create New Key</h1>
+    <div class="form-control">
+      <label for="text">Key Name</label>
+      <input type="text" name="text" id="text" placeholder="Add key's name" formControlName="keyName" />
+    </div>
+    <div class="form-control">
+      <label for="instruction">Instruction</label>
+      <input type="text" name="instruction" id="instruction" placeholder="Add instruction"  formControlName="keyInstruction"/>
+    </div>
+    <div class="form-control">
+      <label for="creator">Creator</label>
+      <input type="text" name="creator" id="creator" placeholder="Add creator name"  formControlName="manufacturer"/>
+    </div>
+    <div class="form-control">
+      <label for="day">Price</label>
+      <input type="number" name="price" id="price" placeholder="Add price"  formControlName="price"/>
+    </div>
+    <div class="form-control form-control-check">
+      <label for="ticketType">Select Events</label>
+      <select name="ticketType" id="ticketType" formControlName="keyCategoryID" class="selector">
+        <option value="">Select Events</option>
+        @for (item of keys; track item.id) {
+          <option [value]="item.id">{{item.keyCategoryName}}</option>
+        }
+      </select>
+    </div>
+    <button type="submit" [disabled]="keyForm.invalid || keyForm.pristine" [class.disabled]="keyForm.invalid || keyForm.pristine" class="btn btn-block">{{ id ? 'Update' : 'Submit' }}</button>
+  </form>
+</div>
+
+
